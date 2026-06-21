@@ -183,18 +183,6 @@ TypeAhead_Project/
 └── README.md
 ```
 
----
-
-## GitHub Push
-
-```bash
-cd /path/to/TypeAhead_Project
-git init
-git add .
-git commit -m "Initial commit: Search Typeahead System HLD"
-git remote add origin https://github.com/your-username/typeahead-system.git
-git push -u origin main
-```
 
 ---
 
