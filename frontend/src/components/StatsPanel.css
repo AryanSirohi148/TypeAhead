@@ -1,0 +1,118 @@
+/* StatsPanel */
+.stats-panel {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stats-skeleton { display: flex; flex-direction: column; gap: 10px; }
+.stats-skel-row { height: 28px; width: 100%; }
+.stats-error { color: var(--danger); font-size: 0.85rem; }
+
+/* Key numbers */
+.stats-numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-num {
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  border: 1px solid var(--border);
+}
+.stat-num-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  line-height: 1.2;
+}
+.stat-num-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  font-weight: 500;
+}
+.stat-num-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}
+
+/* Section */
+.stats-section { display: flex; flex-direction: column; gap: 8px; }
+.stats-section-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Bar */
+.stat-bar-row { display: flex; flex-direction: column; gap: 3px; }
+.stat-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+.stat-bar-value { color: var(--text-primary); }
+.stat-bar-track {
+  height: 5px;
+  background: var(--bg-surface-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* Cache node row */
+.cache-node-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 5px 0;
+}
+
+/* Batch writer grid */
+.bw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+.bw-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 4px;
+  background: var(--bg-surface-2);
+  border-radius: 6px;
+}
+.bw-num { font-size: 0.95rem; font-weight: 700; color: var(--text-primary); }
+.bw-lbl { font-size: 0.6rem; color: var(--text-muted); text-align: center; }
+
+.bw-last-flush {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* DB rows */
+.db-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  padding: 3px 0;
+}

@@ -1,0 +1,208 @@
+/* ============================================================
+   Global Design System — SearchAhead
+   Dark glassmorphism theme with indigo/cyan accent palette
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Colors */
+  --bg-base:       #080c18;
+  --bg-surface:    rgba(255, 255, 255, 0.04);
+  --bg-surface-2:  rgba(255, 255, 255, 0.07);
+  --bg-hover:      rgba(255, 255, 255, 0.1);
+  --border:        rgba(255, 255, 255, 0.08);
+  --border-glow:   rgba(99, 102, 241, 0.4);
+
+  --primary:       #6366f1;
+  --primary-light: #818cf8;
+  --accent:        #22d3ee;
+  --accent-light:  #67e8f9;
+
+  --text-primary:  #f1f5f9;
+  --text-secondary:#94a3b8;
+  --text-muted:    #475569;
+
+  --success:       #10b981;
+  --success-bg:    rgba(16, 185, 129, 0.12);
+  --warning:       #f59e0b;
+  --warning-bg:    rgba(245, 158, 11, 0.12);
+  --danger:        #f43f5e;
+  --danger-bg:     rgba(244, 63, 94, 0.12);
+  --info:          #3b82f6;
+  --info-bg:       rgba(59, 130, 246, 0.12);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 24px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+body {
+  /* Subtle gradient mesh background */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(34, 211, 238, 0.06) 0%, transparent 60%);
+  min-height: 100vh;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ---- Utility: glass card ---- */
+.glass-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ---- Utility: section label ---- */
+.section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+/* ---- Utility: mono text ---- */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+/* ---- Animated gradient text ---- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Pill badge ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.badge-success { background: var(--success-bg); color: var(--success); }
+.badge-danger  { background: var(--danger-bg);  color: var(--danger);  }
+.badge-info    { background: var(--info-bg);     color: var(--info);    }
+.badge-warning { background: var(--warning-bg);  color: var(--warning); }
+.badge-purple  { background: rgba(99,102,241,.15); color: var(--primary-light); }
+
+/* ---- Button ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #4f46e5);
+  color: white;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.5);
+}
+.btn-ghost {
+  background: var(--bg-surface-2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* ---- Skeleton loader ---- */
+.skeleton {
+  background: linear-gradient(90deg,
+    var(--bg-surface) 0%,
+    var(--bg-surface-2) 50%,
+    var(--bg-surface) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite ease-in-out;
+  border-radius: var(--radius-sm);
+}
+@keyframes shimmer {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ---- Fade in ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeIn 0.2s ease forwards; }
+
+/* ---- Slide up ---- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slideUp 0.3s ease forwards; }
+
+/* ---- Pulse dot ---- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+.pulse-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse 2s infinite;
+}
+
+/* ---- Number counter animation ---- */
+@keyframes countUp {
+  from { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}

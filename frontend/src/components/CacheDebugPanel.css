@@ -1,0 +1,154 @@
+/* CacheDebugPanel */
+.cache-panel {
+  padding: 20px;
+}
+
+.cache-prefix-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-sm);
+}
+.cache-prefix-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+.cache-prefix-value {
+  font-size: 0.92rem;
+  color: var(--accent);
+}
+
+.cache-loading {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cache-error {
+  padding: 10px 14px;
+  background: var(--danger-bg);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--danger);
+}
+
+.cache-debug-body { display: flex; flex-direction: column; gap: 14px; }
+
+/* Ring visualisation */
+.ring-vis {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.ring-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  flex: 1;
+}
+.ring-node.active {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+.ring-node-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.2s;
+}
+.ring-node.active .ring-node-dot {
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+.ring-node-label {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+.ring-node.active .ring-node-label { color: var(--primary-light); }
+.ring-node-arrow {
+  font-size: 0.65rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Info grid */
+.cache-info-grid { display: flex; flex-direction: column; gap: 6px; }
+.cache-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+.ci-key { color: var(--text-muted); }
+.ci-val { color: var(--text-primary); }
+
+/* Status box */
+.cache-status-box {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+.cache-status-box.hit {
+  background: var(--success-bg);
+  border-color: rgba(16,185,129,0.2);
+}
+.cache-status-box.miss {
+  background: var(--warning-bg);
+  border-color: rgba(245,158,11,0.2);
+}
+.cache-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.cache-hit-detail {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.cache-miss-detail {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Node stats */
+.node-stats {
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.node-stats-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.ns-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
